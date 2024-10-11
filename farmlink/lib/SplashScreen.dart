@@ -12,14 +12,7 @@ class SplashScreen extends StatelessWidget {
             children: [
               Image.asset('assets/farmlink_logo.png', height: 150), // Add your logo here
               SizedBox(height: 20),
-              Text(
-                'FarmLink',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green,
-                ),
-              ),
+              
               SizedBox(height: 10),
               Text(
                 'Buy Farm, Sell Crops!',
