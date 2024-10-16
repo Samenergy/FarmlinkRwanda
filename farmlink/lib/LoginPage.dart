@@ -1,54 +1,56 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FarmLink'),
+        title: const Text('FarmLink'),
         backgroundColor: Colors.green,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Text(
+            const Text(
               'Sign In',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Username',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Password',
                 border: OutlineInputBorder(),
                 suffixIcon: Icon(Icons.visibility),
               ),
               obscureText: true,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Checkbox(value: false, onChanged: (val) {}),
-                Text('Remember Me'),
+                const Text('Remember Me'),
                 TextButton(
                   onPressed: () {},
-                  child: Text('Forgot password?'),
+                  child: const Text('Forgot password?'),
                 ),
               ],
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton.icon(
               icon: const Icon(Icons.check),
               label: const Text("Continue with Google"),
@@ -57,8 +59,8 @@ class LoginPage extends StatelessWidget {
               },
             ),
             ElevatedButton.icon(
-              icon: Icon(Icons.apple),
-              label: Text('Continue with Apple'),
+              icon: const Icon(Icons.apple),
+              label: const Text('Continue with Apple'),
               onPressed: () {
                 // Apple Sign-In function
               },
@@ -67,7 +69,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/register');
               },
-              child: Text('Don’t have an account? Register'),
+              child: const Text('Don’t have an account? Register'),
             ),
           ],
         ),
