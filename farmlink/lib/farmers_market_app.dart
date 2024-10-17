@@ -7,7 +7,7 @@ class FarmersMarketApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF007F00), // Green background
+      backgroundColor: const Color(0xFF018241), // Green background
       body: Center(
         child: Stack(
           alignment: Alignment.center, // Center align all widgets
@@ -27,7 +27,7 @@ class FarmersMarketApp extends StatelessWidget {
               ),
             ),
 
-            // Positioned White Card with Text and Image Icon
+            // Positioned White Card with Text and Button
             Positioned(
               top: 450,
               child: Container(
@@ -55,9 +55,9 @@ class FarmersMarketApp extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
 
-                    // Custom Image Icon with GestureDetector
-                    GestureDetector(
-                      onTap: () {
+                    // "Next" Button
+                    ElevatedButton(
+                      onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -65,10 +65,22 @@ class FarmersMarketApp extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Image.asset(
-                        'assets/arrow_icon.png', // Replace with your image icon
-                        width: 40, // Icon width
-                        height: 40, // Icon height
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF018241), // Green color
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 40,
+                          vertical: 12,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        'Next',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],

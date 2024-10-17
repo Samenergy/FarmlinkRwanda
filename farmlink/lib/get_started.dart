@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart'; // Import the LoginScreen
 
 class GetStarted extends StatelessWidget {
   const GetStarted({Key? key}) : super(key: key);
@@ -6,13 +7,13 @@ class GetStarted extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF007F00), // Green background
+      backgroundColor: const Color(0xFF018241), // Green background
       body: Stack(
         children: [
           // Positioned Image
           Positioned(
             top: 100, // Adjust to move the image vertically
-            left: 10, // Adjust to move the image horizontally
+            left: 60, // Adjust to move the image horizontally
             child: Image.asset(
               'assets/farmers.png', // Replace with your image
               width: 300,
@@ -27,7 +28,12 @@ class GetStarted extends StatelessWidget {
             left: 30, // Adjust horizontal alignment of the card
             right: 30, // Ensure card is centered with some padding
             child: Container(
-              color: Colors.white, // No border radius applied
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(12),
+                ),
+              ),
               padding: const EdgeInsets.symmetric(
                 vertical: 32,
                 horizontal: 16,
@@ -55,16 +61,25 @@ class GetStarted extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
 
-                  // Get Started Button
+                  // Get Started Button with RoundedRectangleBorder
                   ElevatedButton(
                     onPressed: () {
-                      // Handle button press
+                      // Navigate to LoginScreen when button is pressed
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF007F00), // Green button
+                      backgroundColor: const Color(0xFF018241), // Green button
                       padding: const EdgeInsets.symmetric(
                         vertical: 12,
                         horizontal: 32,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8), // Rounded corners
                       ),
                     ),
                     child: const Text(
