@@ -42,7 +42,7 @@ class GetStarted extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min, // Ensures compact card
                 children: [
                   const Text(
-                    'Sell and Buy crops',
+                    'Sell and Buy Crops',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 24,
@@ -61,16 +61,10 @@ class GetStarted extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
 
-                  // Get Started Button with RoundedRectangleBorder
+                  // Get Started Button with Slide Transition
                   ElevatedButton(
                     onPressed: () {
-                      // Navigate to LoginScreen when button is pressed
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
-                        ),
-                      );
+                      _navigateToLoginScreen(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF018241), // Green button
@@ -79,7 +73,8 @@ class GetStarted extends StatelessWidget {
                         horizontal: 32,
                       ),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8), // Rounded corners
+                        borderRadius:
+                            BorderRadius.circular(8), // Rounded corners
                       ),
                     ),
                     child: const Text(
@@ -92,6 +87,33 @@ class GetStarted extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  // Slide Transition Function
+  void _navigateToLoginScreen(BuildContext context) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        transitionDuration:
+            const Duration(milliseconds: 800), // Animation duration
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const LoginScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0); // Slide from right to left
+          const end = Offset.zero;
+          const curve = Curves.easeInOut;
+
+          var tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          var offsetAnimation = animation.drive(tween);
+
+          return SlideTransition(
+            position: offsetAnimation,
+            child: child,
+          );
+        },
       ),
     );
   }

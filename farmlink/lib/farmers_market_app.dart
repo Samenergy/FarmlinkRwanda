@@ -55,15 +55,10 @@ class FarmersMarketApp extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
 
-                    // "Next" Button
+                    // "Next" Button with Transition Animation
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const GetStarted(),
-                          ),
-                        );
+                        _navigateToGetStarted(context);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF018241), // Green color
@@ -89,6 +84,30 @@ class FarmersMarketApp extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  // Slide Transition Function
+  void _navigateToGetStarted(BuildContext context) {
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        transitionDuration: const Duration(milliseconds: 800), // Animation duration
+        pageBuilder: (context, animation, secondaryAnimation) => const GetStarted(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(1.0, 0.0); // Slide from right
+          const end = Offset.zero;
+          const curve = Curves.easeInOut;
+
+          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          var offsetAnimation = animation.drive(tween);
+
+          return SlideTransition(
+            position: offsetAnimation,
+            child: child,
+          );
+        },
       ),
     );
   }
