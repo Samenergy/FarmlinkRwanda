@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -37,16 +39,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/login');
               },
-              child: Text('Get Started'),
+              child: const Text('Get Started'),
             )
           : TextButton(
               onPressed: () {
                 _pageController.nextPage(
-                  duration: Duration(milliseconds: 400),
+                  duration: const Duration(milliseconds: 400),
                   curve: Curves.easeInOut,
                 );
               },
-              child: Text('Next'),
+              child: const Text('Next'),
             ),
     );
   }
@@ -58,19 +60,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(image, height: 300), // Add images accordingly
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             description,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16, color: Colors.grey),
+            style: const TextStyle(fontSize: 16, color: Colors.grey),
           ),
         ],
       ),

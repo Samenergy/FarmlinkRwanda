@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,10 +13,10 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset('assets/farmlink_logo.png', height: 150), // Add your logo here
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Buy Farm, Sell Crops!',
                 style: TextStyle(
                   fontSize: 16,
