@@ -1,13 +1,14 @@
-import 'SplashScreen.dart';
-import 'OnboardingScreen.dart';
-import 'LoginPage.dart';
-import 'RegisterPage.dart';
+import 'package:flutter/material.dart';
+import 'splash_screen.dart';
+// Import the onboarding screens
 
 void main() {
-  runApp(MyApp());
+  runApp(FarmLinkApp());
 }
 
-class MyApp extends StatelessWidget {
+class FarmLinkApp extends StatelessWidget {
+  const FarmLinkApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,12 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const SplashScreen(),
-      routes: {
-        '/onboarding': (context) => const OnboardingScreen(),
-        '/login': (context) => const LoginPage(),
-        '/register': (context) => const RegisterPage(),
-      },
+      home: SplashScreen1(),  // Start with SplashScreen1
     );
   }
 }

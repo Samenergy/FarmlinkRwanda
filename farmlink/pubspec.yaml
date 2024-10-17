@@ -13,20 +13,20 @@ dependencies:
 
   # Adding third-party dependencies
   cupertino_icons: ^1.0.8
-  google_sign_in: ^5.3.3  # For Google Sign-In
-  sign_in_with_apple: ^3.1.0  # For Apple Sign-In
+  google_sign_in: ^6.2.1  # For Google Sign-In
+  sign_in_with_apple: ^6.1.3  # For Apple Sign-In
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
 # # This line enables the Material Icons font
 #   uses-material-design: true
 #   # Add your image assets here
   assets:
-    - assets/farmlink_logo.png
-    - assets/onboarding1.png
-    - assets/onboarding2.png
+    - assets/images/farmlink_logo.jpg
+    - assets/images/onboarding1.jpg
+    - assets/images/onboarding2.jpg
