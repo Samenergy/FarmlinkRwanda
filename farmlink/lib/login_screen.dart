@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'shop_screen.dart'; // Import the ShopScreen
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,6 +20,13 @@ class _LoginScreenState extends State<LoginScreen>
     _tabController = TabController(length: 2, vsync: this);
   }
 
+  void _navigateToShopScreen(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const ShopScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,8 +40,8 @@ class _LoginScreenState extends State<LoginScreen>
               height: 150,
               child: Center(
                 child: Container(
-                  width: 350, // Adjust width
-                  height: 350, // Adjust height
+                  width: 350,
+                  height: 350,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/farmlink_logo.png'),
@@ -87,7 +95,6 @@ class _LoginScreenState extends State<LoginScreen>
                           ),
                         ),
                         const SizedBox(height: 16),
-                        // Username Input
                         const TextField(
                           decoration: InputDecoration(
                             hintText: 'Username',
@@ -95,7 +102,6 @@ class _LoginScreenState extends State<LoginScreen>
                           ),
                         ),
                         const SizedBox(height: 16),
-                        // Password Input
                         TextField(
                           obscureText: _obscureText,
                           decoration: InputDecoration(
@@ -117,15 +123,17 @@ class _LoginScreenState extends State<LoginScreen>
                             ),
                           ),
                         ),
-
                         const SizedBox(height: 24),
                         // Login Button
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navigate to ShopScreen after login
+                            _navigateToShopScreen(context);
+                          },
                           child: const Text(
                             'Login',
                             style: TextStyle(
-                              color: Colors.white, // Change font color to white
+                              color: Colors.white,
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
@@ -133,9 +141,7 @@ class _LoginScreenState extends State<LoginScreen>
                             minimumSize: const Size(double.infinity, 50),
                           ),
                         ),
-
                         const SizedBox(height: 16),
-                        // Remember Me and Forgot Password Row
                         Row(
                           children: [
                             Checkbox(
@@ -155,7 +161,6 @@ class _LoginScreenState extends State<LoginScreen>
                           ],
                         ),
                         const Divider(height: 32),
-                        // Google Login Button
                         ElevatedButton.icon(
                           onPressed: () {},
                           icon: Image.asset('assets/google.png', height: 24),
@@ -168,7 +173,6 @@ class _LoginScreenState extends State<LoginScreen>
                           ),
                         ),
                         const SizedBox(height: 16),
-                        // Apple Login Button
                         ElevatedButton.icon(
                           onPressed: () {},
                           icon: Image.asset('assets/apple.png', height: 24),
