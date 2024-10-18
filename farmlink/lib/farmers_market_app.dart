@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'get_started.dart'; // Import the GetStarted page
 
 class FarmersMarketApp extends StatelessWidget {
-  const FarmersMarketApp({Key? key}) : super(key: key);
+  const FarmersMarketApp({super.key});
 
   @override
   Widget build(BuildContext context) {

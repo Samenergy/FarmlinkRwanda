@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'login_screen.dart'; // Import the LoginScreen
 
 class GetStarted extends StatelessWidget {
-  const GetStarted({Key? key}) : super(key: key);
+  const GetStarted({super.key});
 
   @override
   Widget build(BuildContext context) {

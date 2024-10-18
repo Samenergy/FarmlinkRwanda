@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'shop_screen.dart'; // Import the ShopScreen
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -130,15 +130,15 @@ class _LoginScreenState extends State<LoginScreen>
                             // Navigate to ShopScreen after login
                             _navigateToShopScreen(context);
                           },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF008751),
+                            minimumSize: const Size(double.infinity, 50),
+                          ),
                           child: const Text(
                             'Login',
                             style: TextStyle(
                               color: Colors.white,
                             ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF008751),
-                            minimumSize: const Size(double.infinity, 50),
                           ),
                         ),
                         const SizedBox(height: 16),
@@ -256,6 +256,10 @@ class _LoginScreenState extends State<LoginScreen>
                           SizedBox(height: 24),
                           ElevatedButton(
                             onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF008751),
+                              minimumSize: const Size(double.infinity, 50),
+                            ),
                             child: const Text(
                               'Register',
                               style: TextStyle(
@@ -264,10 +268,6 @@ class _LoginScreenState extends State<LoginScreen>
                                 fontSize:
                                     16, // Optional: Adjust font size if needed
                               ),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF008751),
-                              minimumSize: const Size(double.infinity, 50),
                             ),
                           ),
                           SizedBox(height: 16),
